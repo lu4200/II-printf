@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:00:13 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/17 18:34:15 by lumaret          ###   ########.fr       */
+/*   Updated: 2023/12/17 18:52:17 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_put_nbr_base(long n, int base, char type)
 {
-	int		count;
 	char		*bigsymbols;
 	char		*lilsymbols;
+	int			count;
 
 	bigsymbols = "0123456789ABCDEF";
 	lilsymbols = "0123456789abcdef";

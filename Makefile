@@ -6,7 +6,7 @@
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/17 18:27:22 by lumaret           #+#    #+#              #
-#    Updated: 2023/12/17 18:27:31 by lumaret          ###   ########.fr        #
+#    Updated: 2023/12/17 18:50:18 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,18 +17,19 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_putstr.c ft_putnbr.c ft_puthex.c ft_unsigned.c
+SRCS = ft_printf.c ft_putstr.c ft_putnbrbase.c ft_putunsigned.c ft_putptr.c \
+	ft_putchar.c
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) -c $(SRC) $(FLAGS)
-	ar -rcs $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	$(CC) -c $(SRCS) $(FLAGS)
+	ar -rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
