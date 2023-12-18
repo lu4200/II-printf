@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:04:32 by lucas             #+#    #+#             */
-/*   Updated: 2023/12/18 13:33:44 by lucas            ###   ########.fr       */
+/*   Updated: 2023/12/18 15:43:22 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_putunsigned(size_t n)
 		count += ft_putchar(n + '0');
 	else
 	{
-		count += ft_put_nbr_base(n / 10, 10, 'u');
-	    count += ft_put_nbr_base(n % 10, 10, 'u');
+		count += ft_put_nbr_base(n, 10, 'u', 0);
+		// count += ft_put_nbr_base(n % 10, 10, 'u', 0);
 	}
 	return (count);
 }

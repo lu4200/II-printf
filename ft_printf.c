@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:14:06 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/18 13:34:05 by lucas            ###   ########.fr       */
+/*   Updated: 2023/12/18 15:43:19 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	check_format(char type, va_list ap)
 	else if (type == 's')
 		count += ft_putstr(va_arg(ap, char *));
 	else if (type == 'd')
-		count += ft_put_nbr_base((long)va_arg(ap, int), 10, type);
+		count += ft_put_nbr_base((long)va_arg(ap, int), 10, type, 0);
 	else if (type == 'x' || type == 'X')
-		count += ft_put_nbr_base((long)va_arg(ap, unsigned int), 16, type);
+		count += ft_put_nbr_base((long)va_arg(ap, unsigned int), 16, type, 0);
 	else
 		count += write (1, &type, 1);
 	return (count);
