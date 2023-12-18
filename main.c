@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 17:30:49 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/18 13:33:50 by lucas            ###   ########.fr       */
+/*   Created: 2023/12/18 12:50:54 by lucas             #+#    #+#             */
+/*   Updated: 2023/12/18 13:21:37 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	main()
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	if (!s)
-	{
-		i += write(1, "Ox(nil)", 7);
-		return (7);
-	}
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	count = ft_printf("Hello %s\n", "Lucas");
+	ft_printf("les caracteres lu sont au nombre de : %d\n", count);
+	count = printf("Hello %s\n", "Lucas");
+	printf("les caracteres lu sont au nombre de : %d\n", count);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:14:06 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/17 18:28:19 by lumaret          ###   ########.fr       */
+/*   Updated: 2023/12/18 13:34:05 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	check_format(char type, va_list ap)
 {
@@ -18,12 +18,12 @@ int	check_format(char type, va_list ap)
 
 	count = 0;
 	if (type == 'c')
-		count = ft_putchar(va_arg(ap, int));
+		count += ft_putchar(va_arg(ap, int));
 	else if (type == 's')
-		count = ft_putstr(va_arg(ap, char *));
+		count += ft_putstr(va_arg(ap, char *));
 	else if (type == 'd')
 		count += ft_put_nbr_base((long)va_arg(ap, int), 10, type);
-	else if (type == 'x')
+	else if (type == 'x' || type == 'X')
 		count += ft_put_nbr_base((long)va_arg(ap, unsigned int), 16, type);
 	else
 		count += write (1, &type, 1);
@@ -40,7 +40,7 @@ int	ft_printf(const char *format, ...)
 	while (*format != '\0')
 	{
 		if (*format == '%')
-			print_format(*(++format), ap);
+			count += check_format(*(++format), ap);
 		else
 			count += write(1, format, 1);
 		format++;
@@ -48,12 +48,4 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-int	main()
-{
-	int	count;
 
-	count = ft_printf("Hello %s\n", "Lucas");
-	ft_printf("les caracteres lu sont au nombre de : %d\n", count);
-	count = printf("Hello %s\n", "Lucas");
-	printf("les caracteres lu sont au nombre de : %d\n", count);
-}

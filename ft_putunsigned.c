@@ -6,11 +6,11 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:04:32 by lucas             #+#    #+#             */
-/*   Updated: 2023/12/18 12:08:13 by lucas            ###   ########.fr       */
+/*   Updated: 2023/12/18 13:33:44 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putunsigned(size_t n)
 {
@@ -21,8 +21,8 @@ int	ft_putunsigned(size_t n)
 		count += ft_putchar(n + '0');
 	else
 	{
-		count += ft_putnbrbase(n / 10, 10, 'u');
-	    count += ft_putnbrbase(n % 10, 10, 'u');
+		count += ft_put_nbr_base(n / 10, 10, 'u');
+	    count += ft_put_nbr_base(n % 10, 10, 'u');
 	}
 	return (count);
 }
