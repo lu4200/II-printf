@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:14:06 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/18 15:43:19 by lumaret          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:51:12 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	check_format(char type, va_list ap)
 		count += ft_put_nbr_base((long)va_arg(ap, int), 10, type, 0);
 	else if (type == 'x' || type == 'X')
 		count += ft_put_nbr_base((long)va_arg(ap, unsigned int), 16, type, 0);
+	else if (type == 'u')
+		count += ft_putunsigned(va_arg(ap, unsigned int));
 	else
 		count += write (1, &type, 1);
 	return (count);
