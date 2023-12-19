@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lucas <lucas@student.42.fr>                +#+  +:+       +#+         #
+#    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/17 18:27:22 by lumaret           #+#    #+#              #
-#    Updated: 2023/12/18 12:57:36 by lucas            ###   ########.fr        #
+#    Updated: 2023/12/19 14:32:30 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 test:		$(NAME) 
-			$(CC) $(CFLAGS) -o $(TNAME) $(MAIN) -L. -lft
+			$(CC) $(CFLAGS) -o $(TNAME) $(MAIN) -L. -lftprintf
 $(NAME): $(OBJS)
 
 	$(CC) -c $(SRCS) $(CFLAGS)
