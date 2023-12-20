@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:50:54 by lucas             #+#    #+#             */
-/*   Updated: 2023/12/19 14:41:42 by lumaret          ###   ########.fr       */
+/*   Updated: 2023/12/20 16:42:10 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 int	main()
 {
 	int count;
-
-	count = ft_printf("Hello %s\n", "Lucas Lucas Lucas");
+	char p[] = "bonjour";
+	
+	count = ft_printf("Hello %p\n", p);
 	ft_printf("les caracteres lu sont au nombre de : %d\n", count);
-	count = printf("Hello %s\n", "Lucas Lucas Lucas");
+	count = printf("Hello %p\n", p);
 	printf("les caracteres lu sont au nombre de : %d\n", count);
 }

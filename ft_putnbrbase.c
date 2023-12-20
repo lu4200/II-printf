@@ -6,13 +6,13 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 18:00:13 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/19 14:44:36 by lumaret          ###   ########.fr       */
+/*   Updated: 2023/12/20 16:34:14 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_nbr_base(long n, int base, char type, size_t count)
+int	ft_putnbr(long n, int base, char type, size_t count)
 {
 	char		*bigsymbols;
 	char		*lilsymbols;
@@ -24,14 +24,15 @@ int	ft_put_nbr_base(long n, int base, char type, size_t count)
 	if (n < 0)
 	{
 		write(1, "-", 1);
-		return (ft_put_nbr_base(-n, base, type, count + 1));
+		n *= -1;
+		return (ft_putnbr(n, base, type, count + 1));
 	}
 	else if (n < base)
 		return (ft_putchar(bigsymbols[n]));
 	else
 	{
-		count += ft_put_nbr_base(n / base, base, type, count + 1);
-		ft_putchar(bigsymbols[n % base]);
+		count += ft_putnbr(n / base, base, type, count + 1);
+		count += ft_putchar(bigsymbols[n % base]);
 		return (count);
 	}
 }

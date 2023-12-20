@@ -6,12 +6,12 @@
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/17 18:27:22 by lumaret           #+#    #+#              #
-#    Updated: 2023/12/19 14:32:30 by lumaret          ###   ########.fr        #
+#    Updated: 2023/12/20 16:15:41 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-CC = clang
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -21,8 +21,8 @@ MAIN	=	main.c
 
 TNAME	= test
 
-SRCS = ft_printf.c ft_putstr.c ft_putnbrbase.c ft_putunsigned.c ft_putptr.c \
-	ft_putchar.c
+SRCS = ft_printf.c ft_putstr.c ft_putnbrbase.c ft_putunsigned.c ft_putchar.c \
+	ft_handleptr.c
 
 OBJS = $(SRCS:.c=.o)
 

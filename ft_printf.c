@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:14:06 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/19 14:31:42 by lumaret          ###   ########.fr       */
+/*   Updated: 2023/12/20 16:41:00 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,23 @@ int	check_format(char type, va_list ap)
 	int count;
 
 	count = 0;
-	if (type == 'c')
+	if (type == 'p' && va_arg(ap, void *) == NULL)
+		count += ft_putstr("(nil)");
+	else if (type == 'c')
 		count += ft_putchar(va_arg(ap, int));
 	else if (type == 's')
 		count += ft_putstr(va_arg(ap, char *));
 	else if (type == 'd' || type == 'i')
-		count += ft_put_nbr_base((long)va_arg(ap, int), 10, type, 0);
+		count += ft_putnbr((long)va_arg(ap, int), 10, type, 0);
 	else if (type == 'x' || type == 'X')
-		count += ft_put_nbr_base((long)va_arg(ap, unsigned int), 16, type, 0);
-	else if (type == 'u')
-		count += ft_putunsigned((long)va_arg(ap, unsigned int), 10);
+		count += ft_handleptr((long)va_arg(ap, unsigned int), type);
 	else if (type == 'p')
 	{
 		count += ft_putstr("0x");
-		count += ft_put_nbr_base((long)va_arg(ap, unsigned int), 16, 'u', 0);
+		count += ft_handleptr(va_arg(ap, unsigned long), type);
 	}
+	else if (type == 'u')
+		count += ft_putunsigned((long)va_arg(ap, unsigned int), 10);
 	else
 		count += write (1, &type, 1);
 	return (count);
