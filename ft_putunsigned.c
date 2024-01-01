@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 12:04:32 by lucas             #+#    #+#             */
-/*   Updated: 2023/12/20 15:13:58 by lumaret          ###   ########.fr       */
+/*   Updated: 2023/12/29 18:49:55 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putunsigned(unsigned long n, int base)
+int	ft_putunsigned(unsigned long n)
 {
 	size_t	count;
 
@@ -20,8 +20,6 @@ int	ft_putunsigned(unsigned long n, int base)
 	if (n >= 0 && n < 10)
 		count += ft_putchar(n + '0');
 	else
-	{
-		count += ft_putnbr(n, base, 'u', count);
-	}
+		count += ft_putnbr(n);
 	return (count);
 }

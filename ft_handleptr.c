@@ -3,30 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handleptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:55:11 by lumaret           #+#    #+#             */
-/*   Updated: 2023/12/20 16:41:11 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/01/02 00:01:01 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_handleptr(unsigned long p, char type)
+int	ft_handleptr(unsigned long d, char type)
 {
-	int		i;
 	char	*hex;
-	char	*bighex;
+	int		i;
 
 	i = 0;
-	hex = "0123456789abcdef";
-	bighex = "0123456789ABCDEF";
-	if (p < 16)
-		i += write(1, &hex[p], 1);
-	else if (p >= 16)
+	if (type == 'P' || type == 'X')
+		hex = "0123456789ABCDEF";
+	else
+		hex = "0123456789abcdef";
+	if (d >= 16)
 	{
-		i += ft_handleptr(p / 16, type);
-		i += ft_putchar(hex[p % 16]);
+		i += ft_handleptr(d / 16, type);
+		i += ft_handleptr(d % 16, type);
 	}
+	else if (d <= 9)
+		i += ft_putchar(d + '0');
+	else
+		i += ft_putchar(hex[d]);
 	return (i);
 }
