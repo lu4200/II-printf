@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:55:11 by lumaret           #+#    #+#             */
-/*   Updated: 2024/01/06 11:20:38 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/01/06 13:51:39 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,21 @@ int	ft_handleptr(unsigned long d, char type)
 		i += ft_putchar(d + '0');
 	else
 		i += ft_putchar(hex[d]);
+	return (i);
+}
+
+/*putptr is only here to manage the null p case*/
+int	ft_putptr(unsigned long long ptr, char type)
+{
+	int	i;
+
+	i = 0;
+	if (ptr == 0)
+		i += ft_putstr("(nil)");
+	else
+	{
+		i += ft_putstr("0x");
+		i += ft_handleptr(ptr, type);
+	}
 	return (i);
 }
