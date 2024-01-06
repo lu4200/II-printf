@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:30:49 by lumaret           #+#    #+#             */
-/*   Updated: 2024/01/06 13:09:27 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/01/06 13:34:34 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_putstr(char *s)
 	i = 0;
 	if (!s)
 	{
-		i += write(1, "(null)", 7);
-		return (8);
+		i += write(1, "(null)", 6);
+		return (i);
 	}
 	while (s[i])
 	{
