@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handleptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:55:11 by lumaret           #+#    #+#             */
-/*   Updated: 2024/01/02 00:01:01 by lucas            ###   ########.fr       */
+/*   Updated: 2024/01/06 11:20:38 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_handleptr(unsigned long d, char type)
 	int		i;
 
 	i = 0;
+
 	if (type == 'P' || type == 'X')
 		hex = "0123456789ABCDEF";
 	else

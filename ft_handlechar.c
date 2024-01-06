@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_handlechar.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 17:14:32 by lumaret           #+#    #+#             */
-/*   Updated: 2024/01/06 13:00:38 by lumaret          ###   ########.fr       */
+/*   Created: 2023/12/17 17:30:49 by lumaret           #+#    #+#             */
+/*   Updated: 2024/01/06 13:09:27 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
-#include <stdlib.h>
+#include "ft_printf.h"
 
-int	ft_putchar(int c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_putunsigned(unsigned long n);
-int	ft_printf(const char *str, ...);
-int	ft_handleptr(unsigned long d, char type);
-int	ft_uitoa(unsigned long nbr);
+int	ft_putstr(char *s)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (!s)
+	{
+		i += write(1, "(null)", 7);
+		return (8);
+	}
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
+}
+
+int	ft_putchar(int c)
+{
+	return (write(1, &c, 1));
+}

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lucas <lucas@student.42.fr>                +#+  +:+       +#+         #
+#    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/17 18:27:22 by lumaret           #+#    #+#              #
-#    Updated: 2023/12/29 18:57:35 by lucas            ###   ########.fr        #
+#    Updated: 2024/01/06 10:55:29 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ MAIN	=	main.c
 
 TNAME	= test
 
-SRCS = ft_printf.c ft_putstr.c ft_putnbr.c ft_putunsigned.c ft_putchar.c \
-	ft_handleptr.c
+SRCS = ft_printf.c ft_handlechar.c ft_handlenbr.c ft_handleptr.c \
 
 OBJS = $(SRCS:.c=.o)
 
