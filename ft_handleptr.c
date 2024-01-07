@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 15:55:11 by lumaret           #+#    #+#             */
-/*   Updated: 2024/01/06 13:51:39 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/01/07 15:02:28 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_handleptr(unsigned long d, char type)
 	int		i;
 
 	i = 0;
-
 	if (type == 'P' || type == 'X')
 		hex = "0123456789ABCDEF";
 	else

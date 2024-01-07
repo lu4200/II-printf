@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:14:06 by lumaret           #+#    #+#             */
-/*   Updated: 2024/01/06 13:49:40 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/01/07 15:04:07 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	check_format(char type, va_list ap)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list		ap;
-	int		count;
+	va_list			ap;
+	int				count;
 
 	va_start(ap, format);
 	count = 0;
@@ -52,4 +52,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-

@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 17:14:32 by lumaret           #+#    #+#             */
-/*   Updated: 2024/01/06 13:49:11 by lumaret          ###   ########.fr       */
+/*   Updated: 2024/01/07 15:04:48 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
-#include <stdlib.h>
+# include <stdlib.h>
 
 int	ft_putchar(int c);
 int	ft_putstr(char *s);
